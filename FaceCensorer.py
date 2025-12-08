@@ -12,7 +12,7 @@ class FaceCensorer():
         grayImage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         faceList = self.faceClassifier.detectMultiScale(grayImage)
 
-        if len(faceList) != 0:
+        if len(faceList) != 0:  # check if there is at least one face present
 
             for face in faceList:
 
@@ -35,3 +35,19 @@ class FaceCensorer():
                         cv2.rectangle(image, (i,j), (i+self.squareSize, j+self.squareSize), avgColour, -1)
 
         return image
+
+    @property
+    def squareSize(self):
+        return self._squareSize
+
+    @squareSize.setter
+    def squareSize(self, value):
+        self._squareSize = value
+
+    @property
+    def faceClassifier(self):
+        return self._faceClassifier
+
+    @faceClassifier.setter
+    def faceClassifier(self, value):
+        self._faceClassifier = value
