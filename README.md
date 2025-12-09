@@ -1,5 +1,7 @@
 # Face Censorer
 
+A python class that detects and censors all faces in an image, along with an example use.
+
 Required packages: numpy and cv2
 
 ## Example case:
